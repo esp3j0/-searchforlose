@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fun.f0n.searchforlose.mapper.LoseobjectMapper">
+
+    <resultMap id="BaseResultMap" type="fun.f0n.searchforlose.domain.Loseobject">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="picurl" column="picurl" jdbcType="VARCHAR"/>
+            <result property="finddate" column="finddate" jdbcType="TIMESTAMP"/>
+            <result property="location" column="location" jdbcType="VARCHAR"/>
+            <result property="type" column="type" jdbcType="VARCHAR"/>
+            <result property="remarktable" column="remarktable" jdbcType="VARCHAR"/>
+            <result property="finish" column="finish" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,title,picurl,
+        finddate,location,type,
+        remarktable,finish
+    </sql>
+    <select id="testPage" resultType="fun.f0n.searchforlose.domain.Loseobject">
+        select * from loseobject order by finddate desc
+    </select>
+</mapper>
